@@ -1,0 +1,60 @@
+.burger {
+    width: 48px;
+    height: 48px;
+    display: none;
+
+    &__line {
+        display: block;
+        width: 36px;
+        height: 4px;
+        background-color: $colorText;
+        position: relative;
+        transition: background-color 0.5s 0s;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 4px;
+            background-color: $colorText;
+            position: absolute;
+        }
+
+        &::before {
+            top: -10px;
+            transition: transform 0.3s, top 0.3s 0.3s;
+        }
+
+        &::after {
+            bottom: -10px;
+            transition: transform 0.3s, bottom 0.3s 0.3s;
+        }
+    }
+
+    @media (max-width: 570px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+}
+
+.burger.active {
+    .burger__line {
+        background-color: transparent;
+        &::before {
+            top: 0;
+            transition: top 0.3s, transform 0.3s 0.3s;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            bottom: 0;
+            transition: bottom 0.3s, transform 0.3s 0.3s;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+// 1 должен выполниться поворот
+// расхлопывание выполняетсся после поворота

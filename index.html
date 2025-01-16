@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="./css/main.css">
+      <link rel="stylesheet" href="./css/main.css.map">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+      <script src="./js/mobile-menu.js" defer="defer"></script>
+      <script src="./js/slider.js" defer="defer"></script>
+      <script src="./js/skill-animation.js" defer="defer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer="defer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer="defer"></script>
+      <script src="./js/animation.js" defer="defer"></script>
+   </head>
+   <body> 
+      <svg display = 'none'>
+         <symbol id="icon-cross" viewBox="0 0 32 32">
+            <g>
+               <path d="M7 7L25 25"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M7 25L25 7"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+         </symbol>
+         <symbol id="html-icon" viewBox="0 0 114 129">
+            <g>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H113.459L103.058 115.271L57.0445 128.271L10.164 115.271L0 0ZM92.4217 19.3037H21.1948L24.898 61.9296H74.1422L72.724 80.8393L56.8082 85.1728L40.8925 80.8393L39.7894 69.4147H25.6859L27.6556 91.6337L56.8082 99.6703L85.8032 91.5549L89.5852 47.9836H37.8984L36.4802 32.777H91.161L92.4217 19.3037Z"/>
+            </g>
+         </symbol>
+         <symbol id="css-icon" viewBox="0 0 114 129">
+            <g>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M2.38419e-05 0H113.283L102.899 115.092L56.9561 128.073L10.1483 115.092L2.38419e-05 0ZM21.0832 23.2859H91.9637L85.5128 95.5824L56.6415 103.607L27.6127 95.5824L25.4887 73.5552H39.413L40.357 84.8048L56.6415 89.1316L72.4539 84.8048L74.1846 66.003H24.8593L23.522 51.9213H75.2859L76.5446 37.2889H22.2633L21.0832 23.2859Z"/>
+            </g>
+         </symbol>
+         <symbol id="js-icon" viewBox="0 0 128 128">
+            <g>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H128V128H0V0ZM69.4589 58.6666H57.851V101.208C57.851 102.463 56.7843 107.608 51.3883 107.357C45.9922 107.106 43.5451 101.082 43.5451 101.082L33.9451 106.98C33.9451 106.98 39.2785 117.898 50.0079 117.898C60.7373 117.898 69.4589 113.882 69.4589 101.208V58.6666ZM114.384 67.5765C110.35 60.5602 103.782 57.6466 96.9412 58.0392C90.1007 58.4318 80.1254 60.9977 79.8745 74.5412C79.6237 88.0846 96.1255 92.8 96.1255 92.8C103.004 95.6933 106.238 97.4064 106.039 101.333C105.295 106.157 102.086 107.42 97.9451 107.42C93.8039 107.42 89.69 105.561 85.8981 100.141L76.3608 105.663C81.4623 113.734 87.4667 118.023 97.9451 117.961C108.424 117.898 118.4 112.502 118.086 101.333C117.773 90.1647 112.376 87.2225 101.459 82.1333C94.2631 79.3103 92.1098 78.0549 91.7334 74.5412C91.3569 71.0275 93.8039 68.3922 97.3177 68.3922C100.831 68.3922 103.372 70.2755 105.161 73.6L114.384 67.5765Z"/>
+            </g>
+         </symbol>
+         <symbol id="scss-icon" viewBox="0 0 128 128">
+            <g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M128 64C128 99.3462 99.3462 128 64 128C28.6538 128 0 99.3462 0 64C0 28.6538 28.6538 0 64 0C99.3462 0 128 28.6538 128 64ZM54.3713 51.548C54.3713 51.548 54.0391 51.0504 53.7068 51.0504C53.3746 51.0504 53.1301 51.1583 53.0453 51.548C53.041 52.2082 53.1848 52.8726 53.5429 53.54C54.4346 55.2169 55.8641 56.5731 57.6935 57.6906C60.5153 59.497 64.1424 60.0521 68.1521 60.0147C71.0127 59.9975 74.2962 59.5991 77.7809 59.0181C82.4953 57.9063 86.7409 56.018 90.7305 53.7054C95.0739 50.9037 98.7168 47.1457 101.521 42.2501C101.696 41.9101 101.871 41.597 102.047 41.2839C102.998 39.5903 103.948 37.8972 104.675 31.9569C104.675 29.847 104.294 27.6854 103.348 25.4821C102.363 22.6416 99.9652 20.5562 96.873 18.8419C96.873 18.8419 90.7305 15.5211 82.4292 15.5211C74.1279 15.5211 67.6531 17.6798 67.6531 17.6798C62.2009 19.2316 56.53 21.6636 50.7197 24.6522C46.7877 26.6024 42.9894 29.0589 39.2644 31.7915C33.1866 35.9766 28.8461 41.3972 25.3196 47.3974C24.1158 49.8438 23.4068 52.3808 23.3277 55.0343C23.5909 58.7204 25.1355 62.1519 27.976 65.3275C31.1026 68.9431 34.6521 72.0338 38.6014 74.624L45.906 79.7699C46.8089 80.3864 47.6782 81.031 48.4614 81.7475C47.3677 82.3084 46.15 82.9693 44.7425 83.7551C39.9332 85.9944 35.4474 89.5885 31.1285 93.883C29.8068 95.547 28.754 97.3591 28.1399 99.5279C26.7161 104.557 27.6797 108.456 31.1285 111.149C32.3193 111.773 34.1876 112.145 36.6066 112.311C43.2037 112.276 48.0705 109.61 51.8803 105.338C55.1134 101.845 57.1657 97.198 57.5253 90.8944C57.6709 88.2606 57.1523 85.7504 55.9832 83.3616C57.924 82.7621 59.9697 82.4078 62.175 82.4263C70.1282 83.1209 77.4947 84.5232 78.7761 93.2171C78.5719 95.4161 77.5192 97.3864 75.4553 98.862C75.4553 98.862 73.7957 99.6919 74.2933 100.189C74.7909 100.687 75.7876 100.189 75.7876 100.189C78.7833 99.0547 80.722 96.8974 81.4325 93.5493C82.061 89.9452 80.4459 86.4762 77.4487 83.0907C75.0555 80.7177 72.0641 78.5417 64.6659 78.1102C62.3001 78.1217 60.127 78.2051 58.3566 78.4424C56.5156 78.7334 55.016 79.0607 53.4936 79.5627C52.1689 77.9675 50.5231 76.4323 48.561 74.9562L41.0895 69.1459C35.7739 64.9305 32.8687 60.4735 33.1204 55.6987C33.1607 48.4746 38.6877 40.4725 57.1931 30.6294C65.7547 25.9711 74.3882 23.5606 83.0922 23.3248C90.7161 23.5606 96.9334 25.1714 97.7015 32.1237C97.4138 37.9944 93.942 42.8153 88.7371 47.0652C82.0135 52.2571 74.2775 55.3823 65.1621 55.6987C60.452 55.5836 56.7098 54.3655 54.3713 51.548ZM51.14 85.388C49.2473 86.3637 47.4183 87.488 45.5893 88.6123C45.252 88.8196 44.9148 89.0269 44.5771 89.2333C40.7486 91.9083 38.0204 94.9645 36.2758 98.3644C35.597 99.6387 35.2533 101.039 35.1138 102.515C35.1051 105.041 36.3003 105.8 38.1023 105.669C41.649 105.886 45.0014 103.719 48.2302 100.024C50.3587 97.1894 51.7782 94.021 51.8832 90.2285C52.0001 88.3098 51.7116 86.7304 51.14 85.388Z"/>
+            </g>
+         </symbol>
+         <symbol id="git-icon" viewBox="0 0 129 128">
+            <g>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M17 0C7.6112 0 3.72467e-05 7.61116 3.72467e-05 17V33.1551H0V44.0195H3.72467e-05V64V111C3.72467e-05 120.389 7.6112 128 17 128H64.2498H111.5C120.888 128 128.5 120.389 128.5 111V64V17C128.5 7.61116 120.888 0 111.5 0H64.2498H17ZM3.72467e-05 44.0195H27.5528C29.5255 48.8193 34.2471 52.199 39.758 52.199C41.5519 52.199 43.2622 51.8409 44.8212 51.1923L78.3283 84.6994C77.6855 86.2525 77.3307 87.9551 77.3307 89.7405C77.3307 97.0253 83.2362 102.931 90.521 102.931C97.8058 102.931 103.711 97.0253 103.711 89.7405C103.711 82.4557 97.8058 76.5502 90.521 76.5502C89.0264 76.5502 87.5898 76.7988 86.2504 77.2569L53.013 44.0195H78.3782C80.3509 48.8193 85.0725 52.199 90.5834 52.199C97.8682 52.199 103.774 46.2936 103.774 39.0088C103.774 31.724 97.8682 25.8185 90.5834 25.8185C85.401 25.8185 80.9167 28.8073 78.76 33.1551H51.5815C49.4248 28.8073 44.9404 25.8185 39.758 25.8185C34.5756 25.8185 30.0913 28.8073 27.9346 33.1551H3.72467e-05V44.0195Z"/>
+            </g>
+         </symbol>
+         <symbol id="mail" viewBox="0 0 33 33">
+            <g>
+               <path d="M27.1667 30.1236H5.83335C5.12611 30.1236 4.44783 29.8426 3.94774 29.3426C3.44764 28.8425 3.16669 28.1641 3.16669 27.4569V12.8556C3.18885 12.4149 3.31839 11.9862 3.54404 11.607C3.76968 11.2277 4.08458 10.9094 4.46135 10.6796L15.128 4.27959C15.5423 4.03118 16.0163 3.89996 16.4993 3.89996C16.9824 3.89996 17.4564 4.03118 17.8707 4.27959L28.5374 10.6796C29.3386 11.1636 29.8307 12.0303 29.8334 12.9663V27.4569C29.8334 28.1641 29.5524 28.8425 29.0523 29.3426C28.5522 29.8426 27.874 30.1236 27.1667 30.1236ZM5.83335 13.9476V27.4569H27.1667V13.9476L16.5 21.0582L5.83335 13.9476ZM16.5 6.56626L7.58802 11.9129L16.5 17.8543L25.4107 11.9129L16.5 6.56626Z"/>
+            </g>
+         </symbol>
+         <symbol id="vk" viewBox="0 0 34 34">
+            <g>
+               <path d="M16.6467 25.2697H18.3404C18.3404 25.2697 18.8507 25.2144 19.1111 24.935C19.3586 24.6746 19.3586 24.1925 19.3586 24.1925C19.3586 24.1925 19.3221 21.9214 20.3828 21.5879C21.4282 21.2567 22.7541 23.78 24.1672 24.75C25.2468 25.4913 26.0589 25.3322 26.0589 25.3322L29.8433 25.2804C29.8433 25.2804 31.8256 25.1566 30.8887 23.5997C30.8168 23.476 30.3571 22.4506 28.0943 20.3468C25.723 18.1535 26.0412 18.5071 28.891 14.705C30.6223 12.3891 31.3306 10.9736 31.1008 10.3725C30.9052 9.8068 29.6158 9.94705 29.6158 9.94705L25.3706 9.98359C25.3706 9.98359 25.0524 9.94705 24.8225 10.0897C24.5927 10.2299 24.4525 10.5505 24.4525 10.5505C24.4525 10.5505 23.7783 12.3525 22.8779 13.8741C20.965 17.0904 20.2049 17.2672 19.9043 17.0551C19.1925 16.5942 19.3751 15.1929 19.3751 14.1888C19.3751 11.0761 19.8513 9.76909 18.4547 9.43319C17.995 9.32594 17.6521 9.25641 16.4688 9.23755C14.9484 9.22105 13.6661 9.24934 12.9389 9.60409C12.4616 9.84334 12.0904 10.3725 12.3037 10.3996C12.5865 10.435 13.2218 10.5717 13.5577 11.0325C13.9997 11.6289 13.9808 12.9607 13.9808 12.9607C13.9808 12.9607 14.2295 16.6331 13.3986 17.0892C12.8152 17.398 12.0373 16.7592 10.3402 13.8411C9.47391 12.3561 8.81862 10.6943 8.81862 10.6943C8.81862 10.6943 8.69487 10.3926 8.46623 10.2158C8.19869 10.0213 7.80976 9.95059 7.80976 9.95059L3.76134 9.98594C3.76134 9.98594 3.16027 10.0048 2.9493 10.2688C2.75366 10.4986 2.93045 10.9936 2.93045 10.9936C2.93045 10.9936 6.09611 18.4034 9.68606 22.1347C12.9743 25.555 16.7057 25.3346 16.7057 25.3346L16.6467 25.2697Z"/>
+            </g>
+         </symbol>
+         <symbol id="github" viewBox="0 0 33 33">
+            <g>
+               <path d="M16.5 1.1863C7.661 1.1863 0.5 8.3533 0.5 17.1863C0.5 24.2593 5.084 30.2543 11.437 32.3693C12.24 32.5203 12.53 32.0253 12.53 31.5973C12.53 31.2173 12.521 30.2123 12.515 28.8783C8.062 29.8423 7.124 26.7273 7.124 26.7273C6.395 24.8833 5.343 24.3883 5.343 24.3883C3.895 23.3993 5.458 23.4203 5.458 23.4203C7.062 23.5293 7.906 25.0653 7.906 25.0653C9.33299 27.5133 11.65 26.8053 12.567 26.3933C12.707 25.3623 13.124 24.6533 13.578 24.2583C10.026 23.8573 6.291 22.4823 6.291 16.3513C6.291 14.6003 6.911 13.1743 7.936 12.0543C7.759 11.6533 7.217 10.0233 8.077 7.8193C8.077 7.8193 9.41604 7.3923 12.477 9.46033C13.7809 9.10566 15.1258 8.92379 16.477 8.9193C17.837 8.92829 19.196 9.10627 20.477 9.46033C23.52 7.3923 24.858 7.8193 24.858 7.8193C25.717 10.0233 25.175 11.6523 25.019 12.0543C26.034 13.1743 26.654 14.6013 26.654 16.3513C26.654 22.4963 22.914 23.8513 19.358 24.2423C19.914 24.7213 20.435 25.7063 20.435 27.2013C20.435 29.3413 20.415 31.0653 20.415 31.5863C20.415 32.0023 20.695 32.5023 21.519 32.3413C27.919 30.2483 32.498 24.2483 32.498 17.1853C32.498 8.3523 25.337 1.1853 16.498 1.1853L16.5 1.1863Z"/>
+            </g>
+         </symbol>
+         <symbol id="figma" viewBox="0 0 33 33">
+            <g>
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.72 0.790283C8.45734 0.790283 5.83334 3.52762 5.83334 6.88095C5.83334 8.91962 6.804 10.7303 8.296 11.8356C7.52704 12.4117 6.90375 13.16 6.47609 14.0204C6.04843 14.8808 5.8283 15.8295 5.83334 16.7903C5.83334 18.8303 6.804 20.6396 8.296 21.7449C7.52704 22.3211 6.90375 23.0693 6.47609 23.9297C6.04843 24.7902 5.8283 25.7388 5.83334 26.6996C5.83334 30.0529 8.45734 32.7903 11.72 32.7903C14.9813 32.7903 17.6067 30.0529 17.6067 26.6996V21.5503C18.6378 22.41 19.9375 22.8813 21.28 22.8823C24.5427 22.881 27.1667 20.1436 27.1667 16.7903C27.172 15.8294 26.952 14.8807 26.5243 14.0202C26.0967 13.1597 25.4732 12.4115 24.704 11.8356C25.473 11.2595 26.0963 10.5112 26.5239 9.65083C26.9516 8.79042 27.1717 7.84177 27.1667 6.88095C27.1667 3.52762 24.5427 0.790283 21.28 0.790283H11.72ZM8.04534 6.88095C8.04534 4.75962 9.70134 3.06095 11.72 3.06095H15.3933V10.701H11.72C9.70134 10.701 8.04534 9.00095 8.04534 6.88095ZM21.28 10.6996H17.6067V3.05962H21.28C23.3 3.05962 24.9547 4.75962 24.9547 6.88095C24.9547 9.00095 23.3 10.6996 21.28 10.6996ZM8.04667 16.7903C8.04667 14.6703 9.70267 12.9703 11.7213 12.9703H15.3947V20.6103H11.72C9.7 20.6103 8.04534 18.9103 8.04534 16.7903H8.04667ZM17.6067 16.7903C17.6067 14.6703 19.2627 12.9703 21.2813 12.9703C23.3013 12.9703 24.956 14.669 24.956 16.7903C24.956 18.9103 23.3013 20.6103 21.2813 20.6103C19.2627 20.6103 17.608 18.9116 17.608 16.7903H17.6067ZM8.04667 26.6996C8.04667 24.5796 9.70267 22.881 11.7213 22.881H15.3947V26.6996C15.3947 28.8209 13.7413 30.5196 11.7213 30.5196C9.70267 30.5196 8.04667 28.8209 8.04667 26.6996Z"/>
+            </g>
+         </symbol>
+         <symbol id="arrowLeft" viewBox="0 0 48 48">
+            <g>
+               <path d="M29.6531 33.4167L20.4109 24.1746L28.896 15.6873L25.7957 12.5891L14.2255 24.1592L26.568 36.5018L29.6531 33.4167Z"/>
+               <path d="M48 24C48 10.7454 37.2545 0 24 0C10.7454 0 0 10.7454 0 24C0 37.2545 10.7454 48 24 48C37.2545 48 48 37.2545 48 24ZM2.1818 24C2.1818 11.9498 11.9498 2.1818 24 2.1818C36.0502 2.1818 45.8182 11.9498 45.8182 24C45.8182 36.0502 36.0502 45.8182 24 45.8182C11.9498 45.8182 2.1818 36.0502 2.1818 24Z"/>
+            </g>
+         </symbol>
+         <symbol id="arrowRight" viewBox="0 0 48 48">
+            <g>
+               <path d="M18.3469 14.5833L27.5891 23.8254L19.104 32.3127L22.2043 35.4109L33.7745 23.8408L21.432 11.4982L18.3469 14.5833Z"/>
+               <path d="M-1.69873e-06 24C-1.69873e-06 37.2546 10.7455 48 24 48C37.2546 48 48 37.2546 48 24C48 10.7455 37.2546 -1.69873e-06 24 -1.69873e-06C10.7455 -1.69873e-06 -1.69873e-06 10.7455 -1.69873e-06 24ZM45.8182 24C45.8182 36.0502 36.0502 45.8182 24 45.8182C11.9498 45.8182 2.1818 36.0502 2.1818 24C2.1818 11.9498 11.9498 2.1818 24 2.1818C36.0502 2.1818 45.8182 11.9498 45.8182 24Z"/>
+            </g>
+         </symbol>
+      </svg>
+      <header class="header">
+         <div class="container">
+            <div class="header__content">
+               <a href="" class="logo">
+                  <img src="./img/icons/logo.svg" alt="logo">
+               </a>
+               <nav class="header__menu" id="menu">
+                  <ul class="header__list">
+                     <li class="header__list-item">
+                        <a href="#aboutMe" class="anchor-link">
+                           about me
+                        </a>
+                     </li>
+                     <li class="header__list-item">
+                        <a href="#skills" class="anchor-link">
+                           skills
+                        </a>
+                     </li>
+                     <li class="header__list-item">
+                        <a href="#myWorks" class="anchor-link">
+                           projects
+                        </a>
+                     </li>
+                     <li class="header__list-item">
+                        <a href="#contacts" class="anchor-link">
+                           contacts
+                        </a>
+                     </li>
+                  </ul>
+               </nav>
+               <button class="burger" id="burger">
+                  <span class="burger__line">
+                     
+                  </span>
+               </button>
+            </div>
+         </div>
+      </header>
+      <main class="main">
+         <section class="welcome">
+            <div class="container">
+               <div class="welcome__content">
+                  <div class="hero" id="hero">
+                     <h1 class="main-title">
+                           veronika Portnykh
+                     </h1>
+                     <h2 class="main-subtitle">
+                        frontend developer
+                     </h2>
+                     <div class="hero__desk">
+                        <p class="hero__desk-text">
+                           Frontend developer looking for ideas and projects for himself and others
+                        </p>
+                     </div>
+                  </div>
+                  <div class="avatar">
+                     <div class="avatar__element avatar__element--img">
+                        <img src="./img/avatar/cat.jpg" alt="">
+                     </div>
+                     <div class="avatar__element avatar__element--first" id="firstAvatar"></div>
+                     <div class="avatar__element avatar__element--second" id="secondAvatar"></div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="about-me" id="aboutMe">
+            <div class="container">
+               <div class="about-me__content">
+                  <img class="about-me__img" src="./img/icons/about-me__icon.svg" alt="icon" id="aboutIcon">
+                  <p class="about-me__description" id="aboutText">
+                     A few years ago, I became interested in developing websites and interfaces. Since then, I have been steadily improving my skills. Now I am developing websites and web applications to order or for myself.
+                  </p>
+               </div>
+            </div>
+         </section> 
+      <section class="skills" id="skills">
+         <div class="fade-block" id="fadeBlock"></div>
+            <div class="container">
+               <div class="skills__content">
+                  <h6 class="context-title">
+                     My Skills
+                  </h6>
+                  <ol class="list-skills" id="listSkills">
+                     <li class="list-skills__item">  
+                        <button class="skill-card skill-card--html" data-skill-card>
+                           <span class="skill-card__front" >
+                              <span class="skill-card__img">
+                                 <svg class="skill-card__icon">
+                                    <use xlink:href = "#html-icon"></use>
+                                 </svg>
+                              </span>
+                              <span class="skill-card__text">
+                                 HTML5
+                              </span>
+                           </span>
+                           <span class="skill-card__back">
+                              <span class="slill-card__description">
+                                 Crafting the foundation of the web-page, I create clean, semantic HTML structures that ensure accessibility and seamless user experiences. Every tag is purposeful, delivering performance and clarity.
+                              </span>
+                              <span class="skill-card__cross" data-cross>
+                                 <svg class="cross-icon">
+                                    <use xlink:href = "#icon-cross"></use>
+                                 </svg>
+                              </span>
+                           </span>
+                        </button>
+                     </li>
+                     <li class="list-skills__item">  
+                        <button class="skill-card skill-card--css" data-skill-card>
+                           <span class="skill-card__front">
+                              <span class="skill-card__img">
+                                 <svg class="skill-card__icon">
+                                    <use xlink:href = "#css-icon"></use>
+                                 </svg>
+                              </span>
+                              <span class="skill-card__text">
+                                 CSS3
+                              </span>
+                           </span>
+                           <span class="skill-card__back">
+                              <span class="slill-card__description">
+                                 Transforming ideas into visually stunning designs, I harness the power of CSS to bring creativity to life. From layouts to animations, I ensure your website stands out.
+                              </span>
+                              <span class="skill-card__cross" data-cross>
+                                 <svg class="cross-icon">
+                                    <use xlink:href = "#icon-cross"></use>
+                                 </svg>
+                              </span>
+                           </span>
+                        </button>
+                     </li>
+                     <li class="list-skills__item">  
+                        <button class="skill-card skill-card--js" data-skill-card>
+                           <span class="skill-card__front">
+                              <span class="skill-card__img">
+                                 <svg class="skill-card__icon">
+                                    <use xlink:href = "#js-icon"></use>
+                                 </svg>
+                              </span>
+                              <span class="skill-card__text">
+                                 JavaScript
+                              </span>
+                           </span>
+                           <span class="skill-card__back">
+                              <span class="slill-card__description">
+                                 Breathing interactivity into the web-page, I use JavaScript to create dynamic, engaging, and user-friendly applications. I turn static pages into immersive digital experiences.
+                              </span>
+                              <span class="skill-card__cross" data-cross>
+                                 <svg class="cross-icon">
+                                    <use xlink:href = "#icon-cross"></use>
+                                 </svg>
+                              </span>
+                           </span>
+                        </button>
+                     </li>
+                     <li class="list-skills__item">  
+                        <button class="skill-card skill-card--scss" data-skill-card>
+                           <span class="skill-card__front">
+                              <span class="skill-card__img">
+                                 <svg class="skill-card__icon">
+                                    <use xlink:href = "#scss-icon"></use>
+                                 </svg>
+                              </span>
+                              <span class="skill-card__text">
+                                 SCSS
+                              </span>
+                           </span>
+                           <span class="skill-card__back">
+                              <span class="slill-card__description">
+                                 Effortlessly blending style and efficiency, I use SCSS to write scalable and maintainable stylesheets. Advanced features like mixins and variables keep your project future-proof.
+                              </span>
+                              <span class="skill-card__cross" data-cross>
+                                 <svg class="cross-icon">
+                                    <use xlink:href = "#icon-cross"></use>
+                                 </svg>
+                              </span>
+                           </span>
+                        </button>
+                     </li>
+                     <li class="list-skills__item">  
+                        <button class="skill-card skill-card--git" data-skill-card>
+                           <span class="skill-card__front">
+                              <span class="skill-card__img">
+                                 <svg class="skill-card__icon">
+                                    <use xlink:href = "#git-icon"></use>
+                                 </svg>
+                              </span>
+                              <span class="skill-card__text">
+                                 Git
+                              </span>
+                           </span>
+                           <span class="skill-card__back">
+                              <span class="slill-card__description">
+                                 Ensuring smooth collaboration and version control, I leverage Git to manage projects with precision. From small tweaks to major updates, your codebase is always in sync and secure.
+                              </span>
+                              <span class="skill-card__cross" data-cross>
+                                 <svg class="cross-icon">
+                                    <use xlink:href = "#icon-cross"></use>
+                                 </svg>
+                              </span>
+                           </span>
+                        </button>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </section> 
+         <section class="my-works" id="myWorks">
+            <div class="container">
+               <div class="my-works__content">
+                  <h6 class="context-title">
+                     My Works
+                  </h6>
+                  <ol class="list-works">
+                     <li class="list-works__item">
+                        <div class="project-card" data-card-project>
+                           <img src="./img/projects/card_portfolio.jpg" alt="">
+                           <div class="project-card__info">
+                              <div class="project-card__title">
+                                 <h6 class="context-title">
+                                    News Blog
+                                 </h6>
+                                 <p class="project-card__stack">
+                                    HTML, SCSS, JS
+                                 </p>
+                              </div>
+                              <div class="project-card__description">
+                                 <p class="project-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                 </p>
+                                 <div class="wrapper-link">
+                                    <a href="" class="link-see-more">
+                                       See more →
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="list-works__item">
+                        <div class="project-card" data-card-project>
+                           <img src="./img/projects/card_portfolio.jpg" alt="">
+                           <div class="project-card__info">
+                              <div class="project-card__title">
+                                 <h6 class="context-title">
+                                    News Blog
+                                 </h6>
+                                 <p class="project-card__stack">
+                                    HTML, SCSS, JS
+                                 </p>
+                              </div>
+                              <div class="project-card__description">
+                                 <p class="project-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                 </p>
+                                 <div class="wrapper-link">
+                                    <a href="" class="link-see-more">
+                                       See more →
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="list-works__item">
+                        <div class="project-card" data-card-project>
+                           <img src="./img/projects/card_portfolio.jpg" alt="">
+                           <div class="project-card__info">
+                              <div class="project-card__title">
+                                 <h6 class="context-title">
+                                    News Blog
+                                 </h6>
+                                 <p class="project-card__stack">
+                                    HTML, SCSS, JS
+                                 </p>
+                              </div>
+                              <div class="project-card__description">
+                                 <p class="project-card__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                 </p>
+                                 <div class="wrapper-link">
+                                    <a href="" class="link-see-more">
+                                       See more →
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </section>
+         <section class="reviews" id="reviews">
+            <div class="container">
+               <h6 class="context-title">Reviews</h6>
+               <div class="reviews__content" id="reviewsContent">
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer class="footer" id="contacts">
+         <div class="container">
+            <div class="footer__content">
+               <div class="invite" id="invite">
+                  <a href="" class="logo">
+                     <img src="./img/icons/logo.svg" alt="logo">
+                  </a>
+                  <p class="invite__description">
+                     If you liked my work and you need me, I'm ready to talk to you.
+                  </p>
+               </div>
+               <div class="contacts">
+                  <h6 class="context-title">
+                     Contacts
+                  </h6>
+                  <ul class="contacts-list" id="contactsList">
+                     <li class="contacts-list__item">
+                        <a href="" class="social-link">
+                           <svg class="social-link__icon">
+                              <use xlink:href = "#mail"></use>
+                           </svg>
+                           <span class="social-link__title">
+                              kukulfe@mail.ru
+                           </span>
+                        </a>
+                     </li>
+                     <li class="contacts-list__item">
+                        <a href="" class="social-link">
+                           <svg class="social-link__icon">
+                              <use xlink:href = "#vk"></use>
+                           </svg>
+                           <span class="social-link__title">
+                              @ontalex
+                           </span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
+
+
+

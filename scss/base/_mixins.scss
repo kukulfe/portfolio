@@ -1,0 +1,29 @@
+@mixin hoverLink ($color) {
+    @media (hover:hover) {
+        &:hover {
+            color: $color;
+        }
+    }
+}
+
+@mixin hoverSkill ($color) {
+    &:hover {
+        .skill-card__icon {
+            fill: $color;
+        }
+        .skill-card__text {
+            color: $color;
+        }
+    }
+}
+
+@mixin hoverContactLink ($colorIcon, $colorText) {
+    &:hover {
+        .social-link__icon {
+            fill: $colorIcon;
+        }
+        .social-link__title {
+            color: $colorText;
+        }
+    }
+}

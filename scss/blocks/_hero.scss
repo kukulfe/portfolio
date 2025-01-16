@@ -1,0 +1,40 @@
+.hero {
+    max-width: 448px;
+
+    .main-title,
+    .main-subtitle {
+        margin-bottom: 14px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 16px;
+        }
+    }
+}
+.main-title {
+    font-size: 64px;
+    color: $contextColor;
+    text-transform: capitalize;
+    font-weight: 900;
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+}
+.main-subtitle {
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+}
+.hero__desk {
+}
+.hero__desk-text {
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+}

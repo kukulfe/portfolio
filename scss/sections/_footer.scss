@@ -1,0 +1,74 @@
+.footer {
+    .logo {
+        margin-bottom: 16px;
+        display: inline-block;
+        max-width: 165px;
+        padding: 5px 0;
+
+        @media (max-width: 690px) {
+            display: block;
+            margin: 0 auto 16px;
+        }
+    }
+}
+.footer__content {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 64px 0;
+    flex-wrap: wrap;
+}
+.invite {
+    max-width: 213px;
+
+    @media (max-width: 690px) {
+    max-width: 340px;
+    }
+}
+.invite__description {
+    font-size: 20px;
+}
+.contacts {
+    .context-title {
+        margin-bottom: 16px;
+
+        @media (max-width: 690px) {
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 1px;
+        }
+    }
+}
+
+.contacts-list {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (max-width: 425px) {
+
+        &__item {
+            min-width: 204px;
+        }
+    }
+
+}
+.social-link {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+
+    @include hoverContactLink ($contextColor, $colorText);
+}
+.social-link__icon {
+    width: 32px;
+    height: 32px;
+    fill: #f0e3ca;
+    transition: 0.4s;
+}
+.social-link__title {
+    font-size: 24px;
+    color: $contextColor;
+    transition: 0.4s;
+}

@@ -1,0 +1,197 @@
+.skills {
+    
+}
+.skills__content {
+    padding: 64px 0;
+    
+    .context-title {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}
+.list-skills {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.skill-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+
+    @media (max-width: 768px) {
+        height: 60px;
+        width: 285px;
+    }
+    &__front,
+    &__back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s;
+    }
+
+    &__back{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: rgba(31, 30, 27, 0.909);
+    transform: perspective(600px) rotateY(180deg);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    line-height: 1.4;
+    }
+    
+    &__front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $bgSkillCard;
+        padding: 61px 0 45px;
+        border-radius: 10px;
+        gap: 16px;
+        transform: perspective(600px) rotateY(0deg);
+
+        @media (max-width: 768px) {
+            flex-direction: row;
+            padding: 14px 36px;
+            justify-content: flex-start;
+        }
+    }
+
+    &__cross {
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        &:hover {
+            .cross-icon {
+                stroke: $contextColor;
+            }
+        }
+    }
+
+    .cross-icon {
+        stroke: #fff;
+    }
+
+    &--html,
+    &--css {
+        .skill-card__img {
+            width: 114px;
+            height: 128px;
+
+            @media (max-width: 768px) {
+                width: 28px;
+                height: 32px;
+            }
+        }
+    }
+    &--js,
+    &--scss,
+    &--git {
+        .skill-card__img {
+            width: 128px;
+            height: 128px;
+
+            @media (max-width: 768px) {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    &--html {
+        @include hoverSkill ($skillHtml);
+    }
+    &--css {
+        @include hoverSkill ($skillCss3);
+    }
+    &--js {
+        @include hoverSkill ($skillJs);
+    }
+    &--scss {
+        @include hoverSkill ($skillScss);
+    }
+    &--git {
+        @include hoverSkill ($skillGit);
+    }
+    &--skill-card__text {
+        @include hoverSkill ($skillHtml);
+}
+.skill-card__img {
+    display: inline-block;
+}
+.skill-card__icon { 
+    fill: $colorText;
+    transition: 0.4s;
+}
+.skill-card__text {
+    font-size: 32px;
+    font-family: 'Arial Narrow', sans-serif;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+        font-family: 'Inconsolata', monospace;
+    }
+}
+}
+
+.slill-card__description {
+    font-size: 23px;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+.skill-card.active{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg) !important;
+    max-width: 500px;
+    min-height: 400px;
+    width: 100%;
+    z-index: 5;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
+}
+
+.skill-card.active .skill-card__front{
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.skill-card.active .skill-card__back{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.fade-block{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: transparent;
+    transition: background-color 0.6s, backdrop-filter 0.6s, z-index 0.6s 0s;
+    
+    &.active{
+        background-color: rgba(58, 150, 236, 0.501);
+        backdrop-filter: blur(5px);
+        z-index: 4;
+        transition: background-color 0.6s, backdrop-filter 0.6s, z-index 0s 0s;
+    }
+}

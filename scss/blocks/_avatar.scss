@@ -1,0 +1,55 @@
+.avatar {
+    width: 629px;
+    height: 575px;
+    position: relative;
+    background-image: url(../../img/avatar/bg-avatar-big.png);
+    background-repeat: no-repeat;
+
+    @media (max-width: 768px) {
+        width: 413px;
+        height: 430px;
+        background-image: url(../../img/avatar/bg-avatar-small.png);
+    }
+    @media (max-width: 430px) {
+        width: 290px;
+        height: 300px;
+    }
+}
+.avatar__element {
+    width: 370px;
+    height: 370px;
+    border-radius: 32% 68% 32% 68% / 60% 73% 27% 40% ;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 768px) {
+    width: 279px;
+    height: 277px;
+    }
+
+    @media (max-width: 410px) {
+        width: 200px;
+        height: 200px;
+    }
+}
+.avatar__element--img {
+    overflow: hidden;
+    z-index: 3;
+}
+.avatar__element--first {
+    transform: translate(-50%, -50%) rotate(40deg);
+    background-color: $firstAvatarElement;
+    z-index: 2;
+    animation: rotation 6s ease-in-out infinite;
+    backdrop-filter: blur(8px);
+    filter: blur(20px);
+}
+.avatar__element--second {
+    transform: translate(-50%, -50%) rotate(-40deg);
+    background-color: $secondAvatarElement;
+    animation: rotation 8s linear infinite;
+    backdrop-filter: blur(3px);
+    filter: blur(20px);
+}

@@ -1,0 +1,13 @@
+.welcome {
+}
+.welcome__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 79px 0 72.5px;
+    align-items: center;
+
+    @media (max-width: 1120px) {
+        flex-direction: column;
+        row-gap: 64px;
+    }
+}
